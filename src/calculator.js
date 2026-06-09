@@ -61,7 +61,16 @@ function sqrt(a) {
   return Math.sqrt(a);
 }
 
-module.exports = { add, subtract, multiply, divide, modulo, pow, sqrt };
+// Additional API aliases requested:
+function power(base, exponent) {
+  return pow(base, exponent);
+}
+
+function squareRoot(n) {
+  return sqrt(n);
+}
+
+module.exports = { add, subtract, multiply, divide, modulo, pow, sqrt, power, squareRoot };
 
 // CLI entrypoint
 if (require.main === module) {
