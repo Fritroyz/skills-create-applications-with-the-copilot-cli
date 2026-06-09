@@ -45,4 +45,21 @@ describe('calculator programmatic API', () => {
   test('pow with non-integer exponent', () => {
     expect(calc.pow(9, 0.5)).toBeCloseTo(3);
   });
+
+  // Alias tests requested: power() and squareRoot()
+  test('power alias: power(2, 3) = 8', () => {
+    expect(calc.power(2, 3)).toBe(8);
+  });
+
+  test('power with negative exponent: power(2, -2) = 0.25', () => {
+    expect(calc.power(2, -2)).toBeCloseTo(0.25);
+  });
+
+  test('squareRoot alias: squareRoot(16) = 4', () => {
+    expect(calc.squareRoot(16)).toBe(4);
+  });
+
+  test('squareRoot throws on negative input', () => {
+    expect(() => calc.squareRoot(-4)).toThrow('Square root of negative number');
+  });
 });
